@@ -1,0 +1,21 @@
+import { required } from '@web/utils';
+
+const { version } = require('../../package.json');
+
+type Endpoint = {
+  https: string;
+  wss: string;
+};
+
+export default class Config {
+  version: string;
+  endpoints: Endpoint;
+
+  constructor(env: NodeJS.ProcessEnv) {
+    this.version = version;
+    this.endpoints = {
+      https: required<string>(env.REACT_APP_ENDPOINT_HTTPS),
+      wss: required<string>(env.REACT_APP_ENDPOINT_WSS)
+    };
+  }
+}

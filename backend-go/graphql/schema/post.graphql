@@ -1,0 +1,35 @@
+type Post {
+  id: ID!
+  title: String!
+  content: String
+  published: Boolean!
+  author: User
+}
+
+extend type Query {
+  getPost(input: GetPostInput!): GetPostResult!
+  allPosts: [Post!]!
+}
+
+extend type Mutation {
+  createPost(input: CreatePostInput!): CreatePostResult!
+  deletePost(id: ID!): Boolean!
+}
+
+input GetPostInput {
+  id: ID!
+}
+
+type GetPostResult {
+  post: Post
+}
+
+input CreatePostInput {
+  title: String!
+  content: String
+  userId: ID!
+}
+
+type CreatePostResult {
+  post: Post
+}

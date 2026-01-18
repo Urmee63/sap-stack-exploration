@@ -1,0 +1,10 @@
+# Local environment variables
+.env
+
+# Build binaries
+server
+server.exe
+*.exe
+
+# Air live-reload temporary files
+tmp/
