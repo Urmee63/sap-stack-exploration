@@ -106,6 +106,6 @@ The backend includes an embedded GraphQL Playground, allowing you to test querie
 
 1. Start the Go server: go run cmd/main.go.
 
-2. Navigate to http://localhost:8080/ in your browser.
+2. Navigate to http://localhost:4000/graphql in your browser.
 
 3. Execute queries like allPosts or getUser to inspect the real-time state of your PostgreSQL data.
